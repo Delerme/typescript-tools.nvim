@@ -51,6 +51,14 @@ function M.setup_diagnostic_autocmds(dispatchers)
         group = augroup,
       })
     end, augroup)
+
+    if plugin_config.publish_diagnostic_on == publish_diagnostic_mode.save then
+      api.nvim_create_autocmd({ "BufEnter", "BufWrite" }, {
+        pattern = common.extensions_pattern,
+        callback = request_diagnostics_debounced,
+        group = augroup,
+      })
+    end
   end
 end
 

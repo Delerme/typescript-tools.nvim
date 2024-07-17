@@ -80,6 +80,7 @@ M.tsserver_log_level = {
 M.publish_diagnostic_mode = {
   insert_leave = "insert_leave",
   change = "change",
+  save = "save",
 }
 
 ---@enum code_lens_mode
