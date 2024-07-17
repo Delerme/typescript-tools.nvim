@@ -3,6 +3,7 @@ local c = require "typescript-tools.protocol.constants"
 local CONST_QUEUE_REQUESTS = {
   c.LspMethods.DidOpen,
   c.LspMethods.DidChange,
+  c.LspMethods.DidSave,
   c.LspMethods.DidClose,
 }
 

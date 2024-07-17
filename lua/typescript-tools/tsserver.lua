@@ -56,6 +56,7 @@ local function dispatch_update_event(method, data)
       method == c.LspMethods.DidOpen
       or method == c.LspMethods.DidChange
       or method == c.LspMethods.DidClose
+      or method == c.LspMethods.DidSave
     )
   then
     return

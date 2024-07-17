@@ -18,7 +18,7 @@ local remapped_methods = {
   [c.CustomMethods.SaveTo] = "text_document.save_to",
 }
 
-local noop_methods = { c.LspMethods.DidSave }
+local noop_methods = { }
 utils.add_reverse_lookup(noop_methods)
 
 local M = {}

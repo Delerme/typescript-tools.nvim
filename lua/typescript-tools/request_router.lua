@@ -13,6 +13,7 @@ local router_config = {
   [c.LspMethods.Initialize] = route_type.both,
   [c.LspMethods.DidOpen] = route_type.both,
   [c.LspMethods.DidChange] = route_type.both,
+  [c.LspMethods.DidSave] = route_type.both,
   [c.LspMethods.DidClose] = route_type.both,
   [c.LspMethods.Shutdown] = route_type.both,
   [c.LspMethods.SemanticTokensFull] = route_type.semantic,

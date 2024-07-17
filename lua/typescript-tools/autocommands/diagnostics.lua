@@ -53,9 +53,12 @@ function M.setup_diagnostic_autocmds(dispatchers)
     end, augroup)
 
     if plugin_config.publish_diagnostic_on == publish_diagnostic_mode.save then
-      api.nvim_create_autocmd({ "BufEnter", "BufWrite" }, {
-        pattern = common.extensions_pattern,
-        callback = request_diagnostics_debounced,
+      api.nvim_create_autocmd("User", {
+        pattern = {
+          "TypescriptTools_" .. c.LspMethods.DidOpen,
+          "TypescriptTools_" .. c.LspMethods.DidSave,
+        },
+        callback = request_diagnostics_throttled,
         group = augroup,
       })
     end
